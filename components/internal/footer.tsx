@@ -15,7 +15,7 @@ function FooterSection() {
                         href="https://github.com/yourusername/nyxt-template"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors"
+                        className="flex items-center gap-2 px-6 py-3 bg-gradient-to-br from-blue-500 to-[#04001f] text-white rounded-full hover:bg-gray-800 transition-colors"
                     >
                         <Github className="h-5 w-5" />
                         <span>View on GitHub</span>

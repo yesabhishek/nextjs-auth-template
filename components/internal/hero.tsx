@@ -13,9 +13,9 @@ const Hero = () => {
                 </div>
 
                 {/* Main Title */}
-                <h1 className="text-5xl font-brand sm:text-6xl font-medium text-gray-500 tracking-tight">
-                    Build <span className='text-black underline'>NextJS</span> apps faster
-                    <span className="block">with <span className='text-black underline'>security</span> & <span className='text-black underline'>compliance</span></span>
+                <h1 className="text-5xl font-brand sm:text-6xl font-medium text-gray-600 tracking-tight">
+                    Build <span className='text-blue-600 underline'>NextJS</span> apps faster
+                    <span className="block">with <span className='text-blue-600 underline'>security</span> & <span className='text-blue-600 underline'>compliance</span></span>
                 </h1>
 
                 {/* Subtitle */}
@@ -25,20 +25,20 @@ const Hero = () => {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                    <Link href="/get-started">
+                    <Link target='_blank' href="https://github.com/yesabhishek/nextjs-auth-template">
                         <Button
                             size="lg"
-                            className="bg-gray-900 hover:bg-gray-800 text-white font-medium p-3.5 rounded-full flex items-center gap-2"
+                            className="bg-gradient-to-br from-blue-500 to-[#04001f] hover:bg-gray-800 text-white font-medium px-4 py-8 text-xl rounded-full flex items-center gap-2"
                         >
                             <GithubIcon className="h-5 w-5" />
                             Star Repository
                         </Button>
                     </Link>
-                    <Link href="/how-it-works">
+                    <Link href="/#how-it-works">
                         <Button
                             variant="outline"
                             size="lg"
-                            className="border-gray-200 hover:bg-gray-50 text-gray-600 font-medium p-3.5 rounded-full flex items-center gap-2"
+                            className="border-gray-200 hover:bg-gray-50 text-gray-600 font-medium px-4 py-8 text-xl rounded-full flex items-center gap-2"
                         >
                             How it works
                             <ArrowRight className="h-4 w-4" />

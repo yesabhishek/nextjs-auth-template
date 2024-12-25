@@ -10,10 +10,10 @@ import Link from 'next/link';
 
 const Header = () => {
     const navItems = [
-        { label: "How this works", href: "/how-this-works" },
-        { label: "Integrations", href: "/integrations" },
-        { label: "Roadmap", href: "/roadmap" },
-        { label: "Pricing", href: "/pricing" },
+        { label: "How this works", href: "/#how-this-works" },
+        { label: "Integrations", href: "/#integrations" },
+        { label: "Roadmap", href: "/#roadmap" },
+        { label: "Pricing", href: "/#pricing" },
     ];
 
     return (
@@ -22,7 +22,7 @@ const Header = () => {
                 {/* Logo and Branding */}
                 <div className="flex items-center flex-shrink-0">
                     <Link href="/" className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-gradient-to-br from-gray-500 to-[#04001f] rounded-lg flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-[#04001f] rounded-lg flex items-center justify-center">
                             <Box className="h-5 w-5 text-white" />
                         </div>
                         <span className="text-lg font-medium text-gray-900 font-brand">Nyxt Template</span>
@@ -57,10 +57,10 @@ const Header = () => {
 
                     {/* Star Repository Button - Desktop */}
                     <div className="hidden md:block">
-                        <Link href="/get-started">
+                        <Link  target='_blank' href="https://github.com/yesabhishek/nextjs-auth-template">
                             <Button
                                 variant="default"
-                                className="bg-gray-900 rounded-full hover:bg-gray-800 text-sm flex items-center gap-2"
+                                className="bg-gradient-to-br from-blue-500 to-[#04001f] rounded-full hover:bg-gray-800 text-sm flex items-center gap-2"
                             >
                                 <Github className="h-4 w-4" />
                                 Star Repository
