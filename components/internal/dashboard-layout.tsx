@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, FileText, Calendar, BarChart2, Settings, LogOut } from 'lucide-react';
+import { Home, FileText, Calendar, BarChart2, Settings, LogOut, Box, User2Icon, Users2Icon } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 import {
     DropdownMenu,
@@ -23,8 +23,7 @@ const DashboardLayout: React.FC<LayoutProps> = ({ children }) => {
 
     const navigation = [
         { name: 'Home', href: '/dashboard', icon: Home },
-        { name: 'Templates', href: '/dashboard/templates', icon: FileText },
-        { name: 'Schedule', href: '/dashboard/schedule', icon: Calendar },
+        { name: 'Users', href: '/dashboard/users', icon: Users2Icon },
         { name: 'Analytics', href: '/dashboard/analytics', icon: BarChart2 },
         { name: 'Settings', href: '/dashboard/settings', icon: Settings },
     ];
@@ -39,12 +38,12 @@ const DashboardLayout: React.FC<LayoutProps> = ({ children }) => {
             <aside className="w-64 border-r border-gray-100 bg-white flex flex-col fixed h-full">
                 {/* Logo area */}
                 <div className="h-14 flex items-center px-4 border-b border-gray-100">
-                    <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 bg-gray-900 rounded-lg flex items-center justify-center">
-                            <span className="text-white text-sm font-medium">C</span>
+                    <Link href="/" className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-gray-500 to-[#04001f] rounded-lg flex items-center justify-center">
+                            <Box className="h-5 w-5 text-white" />
                         </div>
-                        <span className="text-base font-medium text-gray-900">Cold Mail</span>
-                    </div>
+                        <span className="text-lg font-medium text-gray-900">Nyxt Template</span>
+                    </Link>
                 </div>
 
                 {/* Navigation */}
@@ -56,8 +55,8 @@ const DashboardLayout: React.FC<LayoutProps> = ({ children }) => {
                                 key={item.name}
                                 href={item.href}
                                 className={`flex items-center gap-2 px-3 py-2 rounded-md mb-1 text-sm font-medium transition-colors ${isActive
-                                        ? 'bg-gray-100 text-gray-900'
-                                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                                    ? 'bg-gray-100 text-gray-900'
+                                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                                     }`}
                             >
                                 <item.icon className="w-4 h-4" />
@@ -72,7 +71,7 @@ const DashboardLayout: React.FC<LayoutProps> = ({ children }) => {
             <main className="pl-64 flex-1 flex flex-col min-h-screen">
                 {/* Top header */}
                 <header className="h-14 border-b border-gray-100 bg-white flex items-center justify-between px-6 sticky top-0 z-10">
-                    <h1 className="text-base font-medium text-gray-900">Dashboard</h1>
+                    <h1 className="text-base font-medium text-gray-900"></h1>
 
                     {/* User menu */}
                     <DropdownMenu>
@@ -105,7 +104,7 @@ const DashboardLayout: React.FC<LayoutProps> = ({ children }) => {
                             Welcome back, {session?.user?.name?.split(' ')[0]}!
                         </h2>
                         <p className="text-gray-500 mt-1">
-                            Manage your email campaigns and templates from here.
+                            Manage your application and analytics from here.
                         </p>
                     </div>
 

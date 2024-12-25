@@ -5,97 +5,104 @@ import {
     SheetContent,
     SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from 'lucide-react';
+import { Menu, Star, Box, Github } from 'lucide-react';
 import Link from 'next/link';
 
 const Header = () => {
     const navItems = [
-        { label: "How it works", href: "/how-it-works" },
+        { label: "How this works", href: "/how-this-works" },
+        { label: "Integrations", href: "/integrations" },
+        { label: "Roadmap", href: "/roadmap" },
         { label: "Pricing", href: "/pricing" },
-        { label: "FAQ", href: "/faq" },
-        { label: "Contact", href: "/contact" },
     ];
 
-    const NavLinks = () => (
-        <>
-            {navItems.map((item) => (
-                <a
-                    key={item.label}
-                    href={item.href}
-                    className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                    {item.label}
-                </a>
-            ))}
-        </>
-    );
-
     return (
-        <header className="w-full border-b border-gray-100/50 bg-white/70 backdrop-blur-xl fixed top-0 z-50 supports-[backdrop-filter]:bg-white/60">
-            <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                {/* Logo */}
-                <div className="flex items-center">
-                    <Link href="/" className="flex items-center gap-2 group">
-                        <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center transition-colors group-hover:bg-gray-800">
-                            <span className="text-white text-lg font-brand">C</span>
+        <header className="w-full border-b border-gray-100 bg-white fixed top-0 z-50">
+            <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+                {/* Logo and Branding */}
+                <div className="flex items-center flex-shrink-0">
+                    <Link href="/" className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-gray-500 to-[#04001f] rounded-lg flex items-center justify-center">
+                            <Box className="h-5 w-5 text-white" />
                         </div>
-                        <span className="text-xl font-brand text-gray-900">Cold Mail</span>
+                        <span className="text-lg font-medium text-gray-900 font-brand">Nyxt Template</span>
                     </Link>
                 </div>
 
-                {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center space-x-8">
-                    <NavLinks />
+                {/* Desktop Navigation - Centered */}
+                <nav className="hidden md:flex items-center justify-center flex-1">
+                    <ul className="flex items-center space-x-8">
+                        {navItems.map((item) => (
+                            <li key={item.label}>
+                                <a
+                                    href={item.href}
+                                    className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                                >
+                                    {item.label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
                 </nav>
 
-                {/* Desktop Sign In */}
-                <div className="hidden md:flex items-center gap-4">
-                    <Link href="/auth/sign-in">
-                        <Button variant="ghost" className="font-medium">
-                            Sign in
-                        </Button>
+                {/* Right Side Actions */}
+                <div className="flex items-center gap-4 md:gap-6">
+                    {/* Sign In Link */}
+                    <Link
+                        href="/auth/sign-in"
+                        className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                    >
+                        Sign In
                     </Link>
-                    <Link href="/get-started">
-                        <Button className="bg-gray-900 hover:bg-gray-800 font-medium">
-                            Get Started
-                        </Button>
-                    </Link>
-                </div>
 
-                {/* Mobile Menu */}
-                <div className="md:hidden flex items-center gap-3">
-                    <Link href="/auth/sign-in">
-                        <Button variant="ghost" size="sm" className="font-medium">
-                            Sign in
-                        </Button>
-                    </Link>
-                    <Sheet>
-                        <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon" className="text-gray-700">
-                                <Menu className="h-5 w-5" />
+                    {/* Star Repository Button - Desktop */}
+                    <div className="hidden md:block">
+                        <Link href="/get-started">
+                            <Button
+                                variant="default"
+                                className="bg-gray-900 rounded-full hover:bg-gray-800 text-sm flex items-center gap-2"
+                            >
+                                <Github className="h-4 w-4" />
+                                Star Repository
                             </Button>
-                        </SheetTrigger>
-                        <SheetContent side="right" className="w-full sm:w-80">
-                            <div className="flex flex-col gap-8 pt-8">
-                                <nav className="flex flex-col gap-6">
+                        </Link>
+                    </div>
+
+                    {/* Mobile Menu */}
+                    <div className="md:hidden">
+                        <Sheet>
+                            <SheetTrigger asChild>
+                                <Button
+                                    variant="ghost"
+                                    size="icon"
+                                    className="text-gray-700"
+                                >
+                                    <Menu className="h-5 w-5" />
+                                </Button>
+                            </SheetTrigger>
+                            <SheetContent side="right" className="w-full max-w-xs p-6">
+                                <nav className="flex flex-col gap-4 mt-6">
                                     {navItems.map((item) => (
                                         <a
                                             key={item.label}
                                             href={item.href}
-                                            className="text-lg font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                                            className="text-base text-gray-600 hover:text-gray-900 transition-colors"
                                         >
                                             {item.label}
                                         </a>
                                     ))}
+                                    <Link href="/get-started" className="mt-2">
+                                        <Button
+                                            className="w-full bg-gray-900 hover:bg-gray-800 text-sm flex items-center justify-center gap-2"
+                                        >
+                                            <Star className="h-4 w-4" />
+                                            Star Repository
+                                        </Button>
+                                    </Link>
                                 </nav>
-                                <Link href="/get-started" className="mt-2">
-                                    <Button className="bg-gray-900 hover:bg-gray-800 w-full font-medium">
-                                        Get Started
-                                    </Button>
-                                </Link>
-                            </div>
-                        </SheetContent>
-                    </Sheet>
+                            </SheetContent>
+                        </Sheet>
+                    </div>
                 </div>
             </div>
         </header>

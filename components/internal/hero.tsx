@@ -1,60 +1,58 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
-import { Mail, ArrowRight, CheckCircle } from 'lucide-react';
+import { Star, ArrowRight, GithubIcon } from 'lucide-react';
 import Link from 'next/link';
 
-const HeroSection = () => {
+const Hero = () => {
     return (
-        <div className="w-full bg-white h-screen flex">
-            <div className="max-w-4xl m-auto px-4 py-24">
-                {/* Top badge */}
-                <div className="flex justify-center mb-8">
-                    <Badge variant="secondary" className="bg-gray-100 text-gray-600 rounded-full px-4 py-1 text-sm font-normal">
-                        Now with AI-powered personalization
-                    </Badge>
+        <div className="w-full min-h-[calc(100vh-3.5rem)] flex flex-col items-center justify-center px-4 bg-gradient-to-b from-white to-gray-50">
+            <div className="w-full max-w-3xl mx-auto text-center space-y-8 pt-20">
+                {/* Badge */}
+                <div className="inline-flex items-center rounded-full border border-gray-200 bg-white px-3 py-1 text-sm text-gray-600 shadow-sm">
+                    <span>v1.0 is now available</span>
                 </div>
 
-                {/* Main heading */}
-                <h1 className="text-center font-normal text-5xl text-gray-900 mb-6 tracking-tight">
-                    Cold emails that convert,
-                    <br />
-                    <span className="text-gray-400">powered by intelligence</span>
+                {/* Main Title */}
+                <h1 className="text-5xl font-brand sm:text-6xl font-medium text-gray-500 tracking-tight">
+                    Build <span className='text-black underline'>NextJS</span> apps faster
+                    <span className="block">with <span className='text-black underline'>security</span> & <span className='text-black underline'>compliance</span></span>
                 </h1>
 
-                {/* Subheading */}
-                <p className="text-center text-gray-500 text-lg mb-12 max-w-2xl mx-auto">
-                    Send personalized bulk emails that feel hand-crafted. Our AI ensures each recipient gets a unique message that resonates.
+                {/* Subtitle */}
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    A minimalist Next.js template with everything you need to create stunning web applications. Start with a solid foundation.
                 </p>
 
-                {/* CTA Section */}
-                <div className="flex justify-center gap-3 mb-16">
-                    <Link href={"/auth/sign-in/"}>
-                        <Button className="bg-gray-900 hover:bg-gray-800">
-                            Get started
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <Link href="/get-started">
+                        <Button
+                            size="lg"
+                            className="bg-gray-900 hover:bg-gray-800 text-white font-medium p-3.5 rounded-full flex items-center gap-2"
+                        >
+                            <GithubIcon className="h-5 w-5" />
+                            Star Repository
+                        </Button>
+                    </Link>
+                    <Link href="/how-it-works">
+                        <Button
+                            variant="outline"
+                            size="lg"
+                            className="border-gray-200 hover:bg-gray-50 text-gray-600 font-medium p-3.5 rounded-full flex items-center gap-2"
+                        >
+                            How it works
                             <ArrowRight className="h-4 w-4" />
                         </Button>
                     </Link>
-
                 </div>
+            </div>
 
-                {/* Features */}
-                <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto text-center">
-                    {[
-                        'AI-powered personalization',
-                        'Automated follow-ups',
-                        'Advanced analytics'
-                    ].map((feature) => (
-                        <div key={feature} className="flex items-center justify-center gap-2 text-gray-600">
-                            <CheckCircle className="h-4 w-4 text-gray-400" />
-                            <span className="text-sm">{feature}</span>
-                        </div>
-                    ))}
-                </div>
+            {/* Optional Gradient Decoration */}
+            <div className="absolute inset-x-0 top-28 -z-10 transform-gpu overflow-hidden blur-3xl">
+                <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-gray-100 to-gray-200 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" />
             </div>
         </div>
     );
 };
 
-export default HeroSection;
+export default Hero;
