@@ -19,8 +19,8 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-    title: "Cold Mail",
-    description: "Smart email management platform",
+    title: "Nyxt Template",
+    description: "Boilerplate app for starting NextJS app development faster.",
 };
 
 export default function RootLayout({

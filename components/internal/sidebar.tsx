@@ -91,7 +91,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, setCollapsed }) => {
                             exit={{ opacity: 0, x: -10 }}
                             className="text-lg font-medium text-gray-900"
                         >
-                            Cold Mail
+                            Nyxt Template
                         </motion.span>
                     )}
                 </motion.div>

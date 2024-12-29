@@ -14,7 +14,7 @@ export default function RootLayout({
       <footer className="w-full px-6 py-4 border-t border-gray-100">
         <div className="max-w-[980px] mx-auto flex justify-between items-center">
           <div className="text-xs text-gray-500">
-            © 2024 Cold Mail, Inc. All rights reserved.
+            © 2024 Nyxt Template, Inc. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/security" className="text-xs text-gray-500 hover:text-gray-900 transition-colors">
